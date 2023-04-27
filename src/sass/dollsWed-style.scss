@@ -1,0 +1,608 @@
+$white: #efefef;
+$primary-color: #d1a58a;
+$sacend-color: #f1d6ad;
+$third-color: #bdbf80;
+$black: #171414;
+$box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, .1);
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+body{
+    background: $white;
+}
+html{
+    font-size: 62.5%;
+    overflow: scroll;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+    background: $black;
+}
+section{
+    padding: 2rem 9%;
+    width: 100%;
+}
+.sub-heading{
+    text-align: center;
+    color: $primary-color;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading{
+    text-align: center;
+    color: $black;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+%primary-btn{
+    background: $sacend-color;
+    color: $white;
+    padding: .8rem 2rem;
+    border-radius: .5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.primary-btn{
+    @extend %primary-btn;
+}
+.primary-btn:hover{
+    color: $black;
+    background: $third-color;
+    letter-spacing: .1rem;
+    border-radius: .5rem 2rem 2rem .5rem;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+    .navbar-nav{
+        .nav-item{
+            display: flex;
+            align-items: center;
+            .nav-link{
+                font-size: 1.5rem;
+                color: $black;
+                &:hover{
+                    color: $primary-color;
+                }
+                &:focus{
+                    color: $primary-color;
+                }
+                &.active{
+                    color: $primary-color;
+                }
+            }
+            a{
+                color: #99979967;
+                padding: .5rem;
+                margin: .5rem 1.4rem;
+                font-size: 3rem;
+                &:hover{
+                    color: $third-color;
+                    transform: scale(1.1);
+                }
+            }
+        }
+        
+    }
+    form{
+        padding: 2rem 0;
+        input{
+            width: 25rem;
+            height: 3.5rem;
+            padding: 1rem;
+            background: #99979967;
+            color: $black;
+            box-shadow: $box-shadow;
+            border-radius: .4rem 0 0 .4rem;
+            font-size: 1.5rem;
+        }
+        button{
+            background: #99979967;
+            color: $white;
+            padding-right: 1rem;
+            border-radius: 0 .4rem .4rem 0;
+            .nav-icon{
+                font-size: 2rem;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.Home{
+    background: linear-gradient(45deg , #cfc9c9, #fff);
+    .carousel-inner{
+        .carousel-item{
+            .card{
+                background: transparent;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+                border: none;
+                .image{
+                    img{
+                        width: 35rem;
+                    }
+                }
+                .content{
+                    padding: 1rem;
+                    margin: .5rem;
+                    span{
+                        color: $black;
+                        font-size: 1.5rem;
+                    }
+                    h3{
+                        font-size: 3rem;
+                        font-weight: bold;
+                        color: $primary-color;
+                    }
+                    p{
+                        color: $black;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.dolls{
+    background: #eee;
+}
+.dolls .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1.5rem;
+    .box{
+        padding: 2.5rem;
+        background: #fff;
+        border-radius: 1rem;
+        border: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: $box-shadow;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        font-size: 2rem;
+        color: goldenrod;
+        %icon-Propertys{
+            position: absolute;
+            top: 1.5rem;
+            background: #eee;
+            border-radius: 50%;
+            height: 2rem;
+            width: 2rem;
+            line-height: 5rem;
+            padding: .5rem;
+            font-size: 1rem;
+            color: $sacend-color;
+            &:hover{
+                background: $primary-color;
+                color: $white;
+            }
+        }
+        .fa-eye{
+            @extend %icon-Propertys;
+            left: -15rem;
+        }
+        .fa-heart{
+            @extend %icon-Propertys;
+            right: -15rem;
+        }
+        &:hover{
+            .fa-heart{
+                right: 2rem;
+                transition: 1s;
+            }
+            .fa-eye{
+                left: 2rem;
+                transition: 1s;
+            }
+            span{
+                color: $third-color;
+            }
+            img{
+                transform: scale(1.25);
+            }
+        }
+        img{
+            height: 17rem;
+            margin: 1rem 0;
+        }
+        h3{
+            color: $black;
+            font-size: 2.5rem;
+        }
+        .stars{
+            padding: 1.5rem 0;
+        }
+        span{
+            color: $primary-color;
+            font-weight: bolder;
+            margin-right: 1rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.about{
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+        .image{
+            flex: 1 1 45rem;
+            img{
+                width: 60%;
+            }
+        }
+        .content{
+            flex: 1 1 45rem;
+            h3{
+                color: $primary-color;
+                font-size: 4rem;
+                padding: .5rem 0;
+            }
+            p{
+                color: #777;
+                font-size: 1.5rem;
+                padding: .5rem 0;
+                line-height: 2;
+            }
+            .icons-container{
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                padding: 1rem 0;
+                margin-top: .5rem;
+                margin: 1rem;
+                .icons{
+                    border: .1rem solid rgba(0, 0, 0, .5);
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    flex: 1 1 5rem;
+                    padding: .8rem .5rem;
+                    color: $black;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+.menu{
+    background: #eee;
+    .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 1.5rem;
+        .box{
+            background: #eee;
+            border: .1rem solid rgba(0, 0, 0, .2);
+            border-radius: .5rem;
+            box-shadow: $box-shadow;
+            margin: 1em;
+            font-size: 2rem;
+            &:hover{
+                transform: scale(1.1);
+                .primary-btn{
+                    color: $black;
+                    background: $third-color;
+                    letter-spacing: .1rem;
+                    border-radius: .5rem 2rem 2rem .5rem;
+                }
+                .h3{
+                    font-size: 2.7rem;
+                }
+                .price{
+                    font-size: 2.2rem;
+                    font-weight: bold;
+                }
+            }
+            .image{
+                height: 30rem;
+                width: 100%;
+                overflow: hidden;
+                padding: 1.5rem;
+                position: relative;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: .5rem;
+                    object-fit: cover;
+                }
+            }
+            .content{
+                padding: 2rem;
+                padding-top: 0;
+                .stars{
+                    padding-bottom: 1rem;
+                    color: goldenrod;
+                }
+                .h3{
+                    color: #999;
+                    font-size: 2.5rem;
+                }
+                p{
+                    color: $primary-color;
+                    font-size: 1rem;
+                    padding: .2rem 0;
+                    margin: .2rem;
+                }
+                .price{
+                    color: $third-color;
+                    margin-left: 1rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+.review{
+    .review-slider{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        .slide{
+            background: #fff;
+            width: 60%;
+            padding: 1.5rem;
+            margin: .5rem;
+            box-shadow: $box-shadow;
+            border: .1rem solid #333;
+            border-radius: 2rem;
+            position: relative;
+            .fa-quote-right{
+                position: absolute;
+                top: 2rem;
+                right:2rem;
+                font-size: 4rem;
+                color: #dbd5d56e;
+            }
+            .user{
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+                padding-bottom: 1.5rem;
+                img{
+                    height: 7rem;
+                    width: 7rem;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                h3{
+                    color: $black;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    padding-bottom: .5rem;
+                }
+                .stars{
+                    font-size: 1.6rem;
+                    color: goldenrod;
+                }
+            }
+            p{
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                color: #333;
+            }
+        }
+    }
+}
+.order{
+    form{
+        max-width: 60rem;
+        border-radius: .5rem;
+        box-shadow: $box-shadow;
+        border: .1rem solid rgba(0, 0, 0, .2);
+        background: $white;
+        padding: 1.5rem;
+        margin: 0 auto;
+        .inputBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            %input-props{
+                background: #dbdada99;
+                border-radius: .5rem;
+                padding: 1rem;
+                font-size: 1.6rem;
+                color: $black;
+                text-transform: none;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+            .input{
+                width: 80%;
+                span{
+                    display: block;
+                    padding: .5rem 0;
+                    font-size: 1.5rem;
+                    color: $white;
+                }
+                %focus{
+                    &:focus{
+                        border: .1rem solid $primary-color;
+                    }
+                }
+                input{
+                    @extend %input-props;
+                    @extend %focus;
+                }
+                textarea{
+                    @extend %input-props;
+                    height: 20rem;
+                    resize: none;
+                    @extend %focus;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    .box-container{
+        background: #dbdada99;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        h5{
+            font-size: 1.3rem;
+            color: $third-color;
+        }
+        .box{
+            h3{
+                padding: 1rem 0;
+                font-size: 2.5rem;
+                color: $primary-color;
+            }
+            a{
+                display: block;
+                padding: 2rem 0;
+                font-size: 1.8rem;
+                color: $black;
+                text-decoration-line: none;
+                &:hover{
+                    color: $third-color;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .creadit{
+        text-align: center;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        font-size: 1.3rem;
+        color: $black;
+        padding: .5rem;
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+        span{
+            color: $primary-color;
+        }
+        
+    }
+}
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    nav{
+        padding: 1rem 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+@media (max-width: 768px){
+    .review{
+        .review-slider{
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            .slide{
+                width: 100%;
+            } 
+        }
+    }
+
+    footer{
+        .box-container{
+            grid-template-columns: repeat(2, 50%);
+            gap: 1rem;
+            .box{
+                h3{
+                    font-size: 1.7rem;
+                }
+                a{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    %primary-btn{
+        padding: .6rem 1rem;
+        font-size: 1rem;
+    }
+    .primary-btn{
+        @extend %primary-btn;
+    }
+    .Home{
+        .carousel-inner{
+            .carousel-item{
+                .card{
+                    height: 40vh;
+                    .image{
+                        img{
+                            width: 15rem;
+                        }
+                    }
+                    .content{
+                        p{
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dolls .box-container{
+        .box{
+            img{
+                height: 20rem;
+            }
+        }
+    }
+    
+    .about{
+        .row{
+            .image{
+                img{
+                    width: 100%;
+                }
+            }
+            .content{
+                h3{
+                    font-size: 3rem;
+                }
+                .icons-container{
+                    margin: .5rem;
+                    .icons{
+                        padding: .4rem .2rem;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+    
+}
